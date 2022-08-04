@@ -5,6 +5,8 @@ const upload = require("express-fileupload");
 
 var app = express();
 app.use(upload());
+
+app.use(cors());
 app.use("/public", express.static(process.cwd() + "/public"));
 
 app.get("/", function (req, res) {
